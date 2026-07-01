@@ -1,0 +1,40 @@
+# === 반드시 커밋할 것 (참고: 무시하지 않음) ===
+# logs/        ← 제출 필수·편집 금지. 절대 ignore 하지 말 것
+# src/         ← 플러그인 본체 (src/.codex-plugin/ 포함)
+# README.md, docs/, research/, tools/, log-hooks/
+
+# === Codex 로컬 설정 (인증 토큰 등 로컬 전용) ===
+/.codex/
+
+# === 비밀정보: 절대 커밋 금지 ===
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+secrets.*
+credentials.*
+
+# === Python (score.py 실행 부산물) ===
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# === Node (혹시 사용 시) ===
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# === OS / 에디터 ===
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
