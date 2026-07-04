@@ -1,0 +1,35 @@
+{
+  "name": "channel-alf-readiness-auditor",
+  "version": "0.1.0",
+  "description": "Audits FAQ, policy, support-rule, and task drafts before Channel Talk ALF deployment to find missing knowledge, policy conflicts, unsafe answers, handoff gaps, and automation risks.",
+  "author": {
+    "name": "AX Hackathon"
+  },
+  "license": "MIT",
+  "keywords": [
+    "channel-talk",
+    "alf",
+    "customer-support",
+    "readiness",
+    "audit"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Channel ALF Readiness Auditor",
+    "shortDescription": "Audit support documents before ALF deployment.",
+    "longDescription": "Finds missing FAQ and policy knowledge, policy conflicts, unsafe AI answer risks, handoff conditions, task trigger risks, and document-structure improvements before Channel Talk ALF deployment.",
+    "developerName": "AX Hackathon",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Research"
+    ],
+    "defaultPrompt": [
+      "Audit this FAQ and policy set before ALF deployment.",
+      "Check whether these customer support documents are ready for Channel Talk ALF.",
+      "Find policy conflicts and handoff rules before AI support automation."
+    ],
+    "brandColor": "#2563EB"
+  }
+}

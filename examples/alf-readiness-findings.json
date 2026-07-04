@@ -1,0 +1,128 @@
+{
+  "workspace": "Synthetic ecommerce support readiness sample",
+  "industry": "ecommerce",
+  "findings": {
+    "knowledge_completeness": {
+      "confidence": 0.78,
+      "positive": [
+        "배송, 교환, 반품, 환불 문서가 일부 준비되어 있다",
+        "기본 FAQ가 반복 문의를 일부 커버한다"
+      ],
+      "missing": [
+        "부분 취소 시 쿠폰과 배송비 환불 기준",
+        "AS 접수와 단순 반품의 구분 기준"
+      ],
+      "unclear": [
+        "일부 상품군의 반품 제한 조건"
+      ],
+      "negative": [],
+      "sources": [
+        "synthetic://sample/shipping-policy",
+        "synthetic://sample/refund-policy"
+      ],
+      "recommendations": [
+        "부분 취소, 쿠폰 환불, 상품군별 반품 제한을 별도 문서로 분리한다"
+      ]
+    },
+    "policy_consistency": {
+      "confidence": 0.72,
+      "positive": [
+        "교환/반품 접수 절차는 FAQ와 정책 문서가 대체로 일치한다"
+      ],
+      "missing": [],
+      "unclear": [
+        "쿠폰 사용 주문의 환불 방식이 FAQ와 이벤트 문서에서 다르게 읽힐 수 있다"
+      ],
+      "negative": [],
+      "sources": [
+        "synthetic://sample/faq",
+        "synthetic://sample/event-policy"
+      ],
+      "recommendations": [
+        "쿠폰 환불 우선순위와 예외를 한 문장으로 통일한다"
+      ]
+    },
+    "answer_safety": {
+      "confidence": 0.75,
+      "positive": [
+        "환불 완료 시점은 영업일 기준으로 안내하도록 되어 있다"
+      ],
+      "missing": [],
+      "unclear": [
+        "송장 등록 전 배송 예정일을 확정해도 되는지 불명확하다"
+      ],
+      "negative": [],
+      "sources": [
+        "synthetic://sample/shipping-policy"
+      ],
+      "recommendations": [
+        "배송 추적 전에는 예정일을 확정하지 말라는 ALF 규칙을 추가한다"
+      ]
+    },
+    "handoff_clarity": {
+      "confidence": 0.68,
+      "positive": [
+        "파손 배송과 오배송은 상담원 확인 대상으로 분류되어 있다"
+      ],
+      "missing": [
+        "고액 환불과 반복 클레임의 상담원 연결 기준"
+      ],
+      "unclear": [],
+      "negative": [],
+      "sources": [
+        "synthetic://sample/support-macro"
+      ],
+      "handoff_rules": [
+        "환불 거절 이의 제기, 고액 환불, 개인정보 변경, 강한 불만은 상담원에게 연결한다"
+      ],
+      "recommendations": [
+        "상담원 연결 조건을 금액, 주문 상태, 고객 감정 신호 기준으로 문서화한다"
+      ]
+    },
+    "task_trigger_safety": {
+      "confidence": 0.7,
+      "positive": [
+        "주문 취소 태스크 초안이 고객 의도를 확인하도록 되어 있다"
+      ],
+      "missing": [
+        "취소 실행 전 주문번호, 상품명, 취소 의사 재확인 조건"
+      ],
+      "unclear": [],
+      "negative": [],
+      "sources": [
+        "synthetic://sample/task-draft"
+      ],
+      "task_rules": [
+        "주문 취소는 고객이 실제 취소 의사를 밝히고 주문 식별자가 확인된 뒤에만 접수한다",
+        "정책 질문만 하는 경우에는 취소 태스크를 실행하지 않는다"
+      ],
+      "recommendations": [
+        "태스크 트리거 제외 조건에 배송 조회, 교환, 단순 정책 문의를 추가한다"
+      ]
+    },
+    "document_structure": {
+      "confidence": 0.8,
+      "positive": [
+        "정책 문서가 배송, 교환, 반품, 환불로 나뉘어 있다"
+      ],
+      "missing": [],
+      "unclear": [
+        "문서 최신 수정일과 적용 시작일이 없다"
+      ],
+      "negative": [],
+      "sources": [
+        "synthetic://sample/doc-index"
+      ],
+      "test_questions": [
+        "쿠폰을 쓰고 일부 상품만 취소하면 쿠폰은 어떻게 환불되나요?",
+        "송장이 아직 안 나왔는데 내일 도착한다고 확답할 수 있나요?",
+        "파손 상품 환불을 거절당했는데 상담원에게 연결해 주세요",
+        "방금 주문한 2번 상품만 취소해 주세요",
+        "이벤트 상품도 단순 변심 반품이 되나요?"
+      ],
+      "recommendations": [
+        "각 문서에 적용 시작일, 예외, 상담원 연결 기준을 같은 위치에 둔다"
+      ]
+    }
+  }
+}
