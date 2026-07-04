@@ -55,8 +55,10 @@ General Codex can summarize documents. This plugin forces an ALF-readiness frame
 ## Verdicts
 
 - `배포 가능`: overall score is at least 80 and no missing, unclear, or negative findings remain.
-- `보완 후 배포`: non-critical gaps remain but no clear blocking risk is present.
-- `배포 보류`: policy conflict, unsafe answer risk, or risky task execution condition is present.
+- `보완 후 배포`: non-critical gaps, ambiguities, or low-risk policy issues remain, but no explicit blocking negative signal is present.
+- `배포 보류`: explicit blocking risks are present, such as confirmed policy conflict, unsafe answer promise, or unsafe task execution condition.
+
+`unclear` items still appear in `risk_flags`, but only explicit `negative` findings in `policy_consistency`, `answer_safety`, or `task_trigger_safety` block deployment.
 
 ## Install
 
@@ -109,9 +111,12 @@ __pycache__/
 node_modules/
 cache/temp files
 OS/editor temp files
+submission.zip
 ```
 
 Do not exclude existing evidence logs such as `logs/codex/*.jsonl`, original work logs, failed-attempt logs, problem-definition logs, E2E logs, or validation logs.
+
+Do not create the final submission by zipping the entire repository if `submission.zip` already exists in the repo. That can create a nested zip. Either submit the verified `submission.zip` directly, or regenerate it from the intended include list while excluding any existing `submission.zip`.
 
 ## Suggested Submission Questions
 
