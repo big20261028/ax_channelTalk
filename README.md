@@ -91,12 +91,19 @@ See `examples/alf-readiness-findings.json` and `logs/channel-alf-readiness-e2e-2
 
 ## Submission ZIP Include
 
+Required / included:
+
 ```text
 src/
 README.md
 logs/
 examples/
 .agents/plugins/marketplace.json
+```
+
+Optional, if present:
+
+```text
 research/
 ```
 
